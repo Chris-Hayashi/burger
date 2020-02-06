@@ -14,7 +14,7 @@ const orm = {
         const query = "INSERT INTO ?(?) VALUES(?)";
         connection.query(query, [table, cols, vals], function(err, res) {
             if (err) throw err;
-            return res;
+            console.log("Burger successfully inserted into database");
         });
     },
 
@@ -22,7 +22,7 @@ const orm = {
         const query = "UPDATE ? WHERE ? = ?? SET ? = ??";
         connection.query(query, [table, col, colVal, setCol, setColVal], function(err, res) {
             if (err) throw err;
-            return res;
+            console.log("Burger successfully updated in database");
         })
     }
 };
