@@ -3,16 +3,22 @@ const orm = require("./../config/orm");
 const table = "burgers";
 
 const burger = {
-    selectAll: function() {
-        return orm.selectAll(table);
+    selectAll: function(cb) {
+        orm.selectAll(table, function(res) {
+            cb(res);
+        });
     },
 
-    insertOne: function(cols, vals) {
-        orm.insertOne(table, cols, vals);
+    insertOne: function(cols, vals, cb) {
+        orm.insertOne(table, cols, vals, function(res) {
+            cb(res);
+        });
     },
 
-    updateOne: function(col, colVal, setCol, setColVal) {
-        orm.updateOne(table, col, colVal, setCol, setColVal);
+    updateOne: function(col, colVal, setCol, setColVal, cb) {
+        orm.updateOne(table, col, colVal, setCol, setColVal, function(res) {
+            cb(res);
+        });
     }
 };
 
