@@ -20,13 +20,13 @@ const orm = {
         });
     },
 
-    updateOne: function(table, col, colVal, setCol, cb) {
-        const query = "UPDATE ?? WHERE ?? = ? SET ?? = ?";
-        connection.query(query, [table, col, colVal, setCol, false], function(err, res) {
+    updateOne: function(table, condition, setCol, cb) {
+        const query = "UPDATE ?? SET ?? = ? WHERE " + condition;
+        connection.query(query, [table, setCol, true], function(err, res) {
             if (err) throw err;
             console.log("Burger successfully updated in database");
             cb(res);
-        })
+        });
     }
 };
 

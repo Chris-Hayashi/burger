@@ -24,8 +24,13 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
-router.put("/api/burgers/:name/", function(req, res) {
-    burger.updateOne("burger_name", req.params.name, "devoured", function(result) {
+router.put("/api/burgers/:id", function(req, res) {
+
+    const condition = "id = " + parseInt(req.params.id);
+
+    console.log("Condition: " + condition);
+    
+    burger.updateOne(condition, "devoured", function(result) {
 
         if (result.changedRows == 0) return res.status(404).end();
         else res.status(200).end();
