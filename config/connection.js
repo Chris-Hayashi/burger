@@ -9,8 +9,15 @@ const connection = mysql.createConnection({
 });
 
 connection.connect(function(err) {
-    if (err) throw err;
-    else console.log("Connected to burgers_db!");
+    // if (err) throw err;
+
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+      }
+      console.log("connected as id " + connection.threadId);
+
+    // else console.log("Connected to burgers_db!");
 });
 
 module.exports = connection;

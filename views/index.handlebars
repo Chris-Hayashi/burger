@@ -1,0 +1,24 @@
+<h1>I have a hanking for some burgers!</h1>
+
+<h3>Let's Eat!</h3>
+
+<form>
+    <label for="burgerName">What burger would you like?</label>
+    <input type="text" id="burgerName">
+
+    <br>
+
+    <input type="submit" value="Submit" id="submit">
+</form>
+
+<ol>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burgers/burgers-block devoured=false}}
+        {{/if}}
+        {{#else}}
+            {{> burgers/burgers-block devoured=true}}
+        {{/else}}
+
+    {{/each}}
+</ol>
