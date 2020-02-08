@@ -12,7 +12,8 @@ const orm = {
 
     insertOne: function(table, cols, vals, cb) {
         const query = "INSERT INTO ??(??) VALUES(?)";
-        connection.query(query, [table, cols.toString(), vals.toString()], function(err, res) {
+        // console.log(cols.toString());
+        connection.query(query, [table, cols, vals], function(err, res) {
             if (err) throw err;
             console.log("Burger successfully inserted into database");
             cb(res);
