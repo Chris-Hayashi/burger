@@ -1,3 +1,4 @@
+// Set up MySQL connection.
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
@@ -8,16 +9,14 @@ const connection = mysql.createConnection({
     database: "burgers_db"
 });
 
+// Make connection
 connection.connect(function(err) {
-    // if (err) throw err;
-
     if (err) {
         console.error("error connecting: " + err.stack);
         return;
       }
-      console.log("connected as id " + connection.threadId);
-
-    // else console.log("Connected to burgers_db!");
+    console.log("connected as id " + connection.threadId);
 });
 
+// Export connection
 module.exports = connection;

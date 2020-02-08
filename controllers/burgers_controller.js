@@ -18,14 +18,14 @@ router.post("/api/burgers", function(req, res) {
     burger.insertOne([
         "burger_name", "devoured"
     ], [
-        req.body.burger_name, req.body.devoured
+        req.body.burger_name, false
     ], function(result) {
-        res.json({ id : result.insertId})
+        res.json({ id : result.insertId });
     });
 });
 
-router.put("/api/burgers/:name/:devoured", function(req, res) {
-    burger.updateOne("burger_name", req.params.name, "devoured", req.params.devoured, function(result) {
+router.put("/api/burgers/:name/", function(req, res) {
+    burger.updateOne("burger_name", req.params.name, "devoured", function(result) {
 
         if (result.changedRows == 0) return res.status(404).end();
         else res.status(200).end();

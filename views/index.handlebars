@@ -1,24 +1,37 @@
-<h1>I have a hanking for some burgers!</h1>
-
-<h3>Let's Eat!</h3>
+<h1>Eat-Da-Burger!</h1>
 
 <form>
-    <label for="burgerName">What burger would you like?</label>
     <input type="text" id="burgerName">
 
     <br>
+    <br>
 
     <input type="submit" value="Submit" id="submit">
+    <h2>Enter a burger you want to eat. And click the submit button</h2>
 </form>
 
-<ol>
+<ol id="notDevoured">
     {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burgers-block devoured=false}}
-        {{/if}}
-        {{#else}}
-            {{> burgers/burgers-block devoured=true}}
-        {{/else}}
+
+        {{#unless devoured}}
+            <div>
+                <li>{{this.burger_name}}</li>
+                <button id="devourIt">Devour it!</button>
+            </div>
+        {{/unless}}
 
     {{/each}}
 </ol>
+
+<ol id="devoured">
+    {{#each burgers}}
+
+        {{#if this.devoured}}
+            <div>
+                <li>{{this.burger_name}}</li>
+            </div>
+        {{/if}}
+
+    {{/each}}
+</ol>
+

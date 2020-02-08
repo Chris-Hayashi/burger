@@ -15,8 +15,8 @@ const burger = {
         });
     },
 
-    updateOne: function(col, colVal, setCol, setColVal, cb) {
-        orm.updateOne(table, col, colVal, setCol, setColVal, function(res) {
+    updateOne: function(col, colVal, setCol, cb) {
+        orm.updateOne(table, col, colVal, setCol, function(res) {
             cb(res);
         });
     }

@@ -11,7 +11,7 @@ const orm = {
     },
 
     insertOne: function(table, cols, vals, cb) {
-        const query = "INSERT INTO ??(?) VALUES(?)";
+        const query = "INSERT INTO ??(??) VALUES(?)";
         connection.query(query, [table, cols.toString(), vals.toString()], function(err, res) {
             if (err) throw err;
             console.log("Burger successfully inserted into database");
@@ -19,9 +19,9 @@ const orm = {
         });
     },
 
-    updateOne: function(table, col, colVal, setCol, setColVal, cb) {
-        const query = "UPDATE ?? WHERE ? = ?? SET ? = ??";
-        connection.query(query, [table, col, colVal, setCol, setColVal], function(err, res) {
+    updateOne: function(table, col, colVal, setCol, cb) {
+        const query = "UPDATE ?? WHERE ?? = ? SET ?? = ?";
+        connection.query(query, [table, col, colVal, setCol, false], function(err, res) {
             if (err) throw err;
             console.log("Burger successfully updated in database");
             cb(res);
