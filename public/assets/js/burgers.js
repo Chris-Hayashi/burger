@@ -9,8 +9,11 @@ $("#submit").on("click", function(event) {
 
     $.post("/api/burgers", burger, function(data) {
         console.log("Data from POST request: " + JSON.stringify(data));
+        // $("#notDevoured").show();
         location.reload();
     });
+
+
 });
 
 $(".devourIt").on("click", function(event) {

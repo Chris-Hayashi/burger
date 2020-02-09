@@ -1,37 +1,79 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+    <h1>Eat-Da-Burger!</h1>
 
-<form>
-    <input type="text" id="burgerName">
+    {{!-- <div class="container"> --}}
+        {{!-- <center> --}}
 
-    <br>
-    <br>
+        <div class="row">
+            
+            <div class="col-md-3">
+                
+                <ol id="notDevoured">
+                    {{#each burgers}}
 
-    <input type="submit" value="Submit" id="submit">
-    <h2>Enter a burger you want to eat. And click the submit button</h2>
-</form>
+                        {{#unless devoured}}
+                        <div>
 
-<ol id="notDevoured">
-    {{#each burgers}}
+                            <div class="eachNotDevoured">
 
-        {{#unless devoured}}
-            <div>
-                <li>{{this.burger_name}}</li>
-                <button class="devourIt" id={{this.id}}>Devour it!</button>
+                                <li class="burgerNotDevoured">{{this.burger_name}}</li>
+                            </div>
+                                <button class="devourIt" id={{this.id}} align="right">Devour it!</button>
+                        </div>
+                        {{/unless}}
+
+                    {{/each}}
+                </ol>
+
             </div>
-        {{/unless}}
 
-    {{/each}}
-</ol>
-
-<ol id="devoured">
-    {{#each burgers}}
-
-        {{#if this.devoured}}
-            <div>
-                <li>{{this.burger_name}}</li>
+            <div class="col-md-6">
+                    
+                <center>
+                    <img src="../../assets/img/burger.png" id="burgerImg">
+                </center>
             </div>
-        {{/if}}
 
-    {{/each}}
-</ol>
+            <div class="col-md-3">
 
+                <ol id="devoured">
+                    {{#each burgers}}
+
+                        {{#if this.devoured }}
+                            {{!-- {{#if `this.id === 11`}} --}}
+                                <div>
+                                    <li>{{this.burger_name}}</li>
+                                </div>
+                            {{!-- {{/if}} --}}
+                        {{/if}}
+
+                    {{/each}}
+                </ol>
+
+            </div>
+        </div>
+        {{!-- </center> --}}
+    {{!-- </div> --}}
+
+
+    <div class="row">
+        
+        <div class="col-md-12">
+            {{!-- <center> --}}
+                
+                <form id="form">
+                    <h2 id="instructions">Enter a burger you want to eat. And click the submit button</h2>
+                    <center>
+
+                        <input type="text" id="burgerName">
+
+
+                        <input type="submit" value="Submit" id="submit">
+                    </center>
+                </form>
+            {{!-- </center> --}}
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "graffiti";
+    src: url("fonts/Hoodson\ free\ font\ .ttf");
+}
+
+body {
+    background-image: linear-gradient(to right, #F2C17D, #A44200);
+    font-family: graffiti;
+}
+
+
+h1 {
+    margin: 2rem auto 0;
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 8rem;
+    color: black;
+}
+
+
+#burgerImg {
+    width: 33vw;
+    height: auto;
+    bottom: 2rem;
+    position: relative;
+    transform: translateX(-4rem);
+}
+
+#notDevoured {
+    position: relative;
+    display: block;
+    margin-top: 15vh;
+    font-size: 3rem;
+    vertical-align: auto;
+    border: 5px solid black;
+    width: 125%;
+    right: 3vw;
+}
+
+#devoured {
+    position: relative;
+    margin-top: 15vh;
+    font-size: 3rem;
+    vertical-align: auto;
+    border: 5px solid black;
+    display: inline-block;
+    width: 125%;
+    /* float: left; */
+}
+
+.eachNotDevoured {
+    position: relative;
+    display: inline-block;
+}
+
+h2 {
+    text-align: center;
+}
+
+.burgerNotDevoured {
+    float: left;
+    margin: auto;
+}
+
+.devourIt {
+    position: relative;
+    display: inline-block;
+    float: right;
+    align-content: right;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#form {
+    margin: 0 auto 3rem;
+    position: relative;
+    display: block;
+    font-size: 3.5rem;
+    bottom: 6vh;
+}
+
+#instructions {
+    font-size: 4rem;
+}
