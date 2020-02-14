@@ -4,16 +4,17 @@ $("#submit").on("click", function(event) {
     console.log("submit onClick event is working");
 
     const burger = {
-        burger_name: $("#burgerName").val()
+        burger_name: $("#burgerName").val().trim()
     };
 
-    $.post("/api/burgers", burger, function(data) {
-        console.log("Data from POST request: " + JSON.stringify(data));
-        // $("#notDevoured").show();
-        location.reload();
-    });
-
-
+    if (burger.burger_name === "")
+        alert("Please enter a burger.");
+    else
+        $.post("/api/burgers", burger, function(data) {
+            console.log("Data from POST request: " + JSON.stringify(data));
+            // $("#notDevoured").show();
+            location.reload();
+        });
 });
 
 $(".devourIt").on("click", function(event) {
