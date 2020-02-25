@@ -49,6 +49,8 @@ Note: This app uses MVC
 
 #### burger_style.css
 ![style1](./public/assets/img/style1.png)
+![style2](./public/assets/img/style2.png)
+![style3](./public/assets/img/style3.png)
 
 ####  burgers.js
 ![burgers1](./public/assets/img/burgers1.png)
