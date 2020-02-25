@@ -9,3 +9,55 @@ This app uses four npm packages: mysql, express, express-handlebars, and body-pa
 Note: This app uses MVC
 
 ## Demo
+![demo](./public/assets/img/demo.gif)
+
+## MVC Filing System
+![mvc](./public/assets/img/mvc.png)
+
+## Screenshots of Code
+
+### server.js
+![server1](./public/assets/img/server1.png)
+
+### Config
+
+#### connection.js
+![connection1](./public/assets/img/connection1.png)
+
+#### orm.js
+![orm1](.public/assets/img/orm1.png)
+
+### controllers
+
+#### burgers_controller.js
+![controllers1](./public/assets/img/controllers1.png)
+
+### db
+
+#### schema.sql
+![schema1](./public/assets/img/controllers1.png)
+
+#### seeds.sql
+![seeds1](./public/assets/img/seeds1.png)
+
+### models
+
+#### burger.js
+![burger1](./public/assets/img/burger1.png)
+
+### public/assets
+
+#### burger_style.css
+![style1](./public/assets/img/style1.png)
+
+####  burgers.js
+![burgers1](./public/assets/img/burgers1.png)
+
+
+### views
+
+#### main.handlebars
+![main1](./public/assets/img/main1.png)
+
+#### index.handlebars
+![index1](./public/assets/img/index1.png)
