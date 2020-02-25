@@ -25,7 +25,7 @@ Note: This app uses MVC
 ![connection1](./public/assets/img/connection1.png)
 
 #### orm.js
-![orm1](.public/assets/img/orm1.png)
+![orm1](./public/assets/img/orm1.png)
 
 ### controllers
 
